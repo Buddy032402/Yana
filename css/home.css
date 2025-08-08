@@ -1,0 +1,560 @@
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: -76px; /* Keep this to offset the navbar height */
+    overflow: hidden;
+    background: #000; /* Fallback color */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjusted overlay opacity */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 0 20px;
+    margin-top: 76px; /* Match navbar height */
+}
+
+/* Add responsive handling for video */
+@media (max-aspect-ratio: 16/9) {
+    .hero-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .hero-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .hero-video {
+        object-position: center center;
+    }
+}
+
+/* Hero Section Styles */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: contentFadeIn 1.5s ease-out;
+    max-width: 900px;
+    padding: 0 20px;
+    margin-top: 200px !important; /* Significantly increased to push content down */
+}
+
+.hero-search {
+    max-width: 800px;
+    margin: 10rem aut !important; /* Dramatically increased to force search box lower */
+    position: relative;
+    z-index: 3;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: white;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-btn {
+    padding: 12px 30px;
+    background: rgba(65, 105, 225, 0.8);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.search-btn:hover {
+    background: rgba(65, 105, 225, 0.9);
+    transform: translateY(-2px);
+}
+
+.search-btn {
+    padding: 12px 30px;
+    background: #4169E1; /* Royal Blue */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+}
+
+.search-btn:hover {
+    background: #2850c8; /* Darker Royal Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+}
+
+.search-btn i {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    background: transparent;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-btn {
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-btn i {
+    font-size: 1.1rem;
+    color: white; /* Explicitly set icon color */
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.search-btn:hover i {
+    color: white; /* Keep icon white on hover */
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.search-btn i {
+    font-size: 1.1rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 2rem; /* Increased bottom margin */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: titleSlideUp 1s ease-out;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: subtitleFadeIn 1.5s ease-out 0.5s both;
+    line-height: 1.4;
+}
+
+/* Section Styles */
+.section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--section-bg, #fff);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    position: relative;
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.png');
+    opacity: 0.1;
+    animation: backgroundMove 20s linear infinite;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Enhanced Animations */
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientPulse {
+    0%, 100% {
+        background: radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.6) 100%
+        );
+    }
+    50% {
+        background: radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+    }
+}
+
+@keyframes backgroundMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Enhanced Responsive Styles */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .section {
+        padding: 6rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .stat-card {
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+.hero-content h1 {
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-weight: 700;
+}
+
+.search-container input::placeholder {
+    font-weight: 600;
+}
+
+.stat-item .number {
+    font-weight: 900;
+}
+
+.stat-item .label {
+    font-weight: 700;
+}
+/* Messenger Button Styles */
+.messenger-button-container {
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.messenger-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00B2FF, #006AFF);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 106, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.messenger-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #006AFF, #00B2FF);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.messenger-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 106, 255, 0.6);
+    color: white;
+}
+
+.messenger-button:hover:before {
+    opacity: 1;
+}
+
+.messenger-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 106, 255, 0.4);
+}
+
+.messenger-button i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* Add a subtle pulse animation to the button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 106, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 106, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 106, 255, 0);
+    }
+}
+
+.messenger-button {
+    animation: pulse 2s infinite;
+}
+
+/* Ensure the button is responsive */
+@media (max-width: 768px) {
+    .messenger-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

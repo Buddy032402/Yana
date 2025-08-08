@@ -1,0 +1,359 @@
+/* Package Grid and Card Styles */
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.8rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Add styles for hidden packages and view all buttons */
+.hidden-package {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.btn-view-all, .btn-view-less {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #4169E1;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(65, 105, 225, 0.15);
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    z-index: 10;
+}
+
+.btn-view-all:hover, .btn-view-less:hover {
+    background: #3158d3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(65, 105, 225, 0.25);
+}
+
+.btn-view-less {
+    display: none;
+}
+
+/* Updated Package Card Styles for Index Page */
+.package-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(65, 105, 225, 0.1);
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.package-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.package-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.1);
+}
+
+.package-content-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.package-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.3;
+}
+
+.package-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.package-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #555;
+    background: rgba(65, 105, 225, 0.05);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.rating-count {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 0.3rem;
+}
+
+.package-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.package-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4169E1;
+}
+
+.btn-view-details {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.2rem;
+    background: #4169E1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+    background: #3158d3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(65, 105, 225, 0.25);
+}
+
+/* Add a travel guide badge */
+.travel-guide-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff3a3a;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.1);
+}
+
+/* Improved content wrapper with reduced padding */
+.package-content-wrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+/* Enhanced title and location styling with reduced margins */
+.package-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+    line-height: 1.3;
+}
+
+.package-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #eee;
+}
+
+/* Improved details section with tighter spacing */
+.package-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.package-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #555;
+    background: rgba(65, 105, 225, 0.05);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced price row with reduced padding */
+.package-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f0f0f0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.package-price-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.package-price-label {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.2rem;
+}
+
+.package-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4169E1;
+}
+
+.package-old-price {
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+/* Enhanced button styling */
+.btn-view-details, .btn-book {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: #4169E1;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(65, 105, 225, 0.15);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10;
+    position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.btn-view-details:hover, .btn-book:hover {
+    background: #3158d3;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(65, 105, 225, 0.25);
+}
+
+/* Fix for mobile view */
+@media (max-width: 576px) {
+    .package-card {
+        min-height: 550px; /* Increased for mobile */
+    }
+    
+    .package-price-row {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .btn-view-details, .btn-book {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Fix for the client review section in top picks */
+.client-review {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.client-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+}
